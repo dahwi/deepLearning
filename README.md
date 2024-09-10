@@ -48,10 +48,12 @@ At the end of the training process, the best model for each regularization techn
 As mentioned above, the best model for each regularization technique is saved in the result dictionary. To test the model with the saved weights for each case, you can load the model using the following code:
 
 ```python
-model_to_test = result["model_with_dropout"]["model"]
-model_params = result["model_with_dropout"]["parameters"]
+model_to_test = result["MODEL_NAME"]["model"]
+model_params = result["MODEL_NAME"]["parameters"]
 model_to_test.load_state_dict(model_params)
 
 # Evaluate the model
 test_accuracy = evaluate_model(model_to_test, test_loader)
 ```
+
+MODEL_NAME can be ["model_no_reg", "model_with_dropout", "model_with_batchnorm", "model_with_weight_decay"]. Note that we also store the final test accuracy for each model in the result dictionary, so the output of test accuracy should be the same as the final test accuracy.
