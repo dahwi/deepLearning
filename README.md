@@ -12,12 +12,9 @@ This script implements and trains the LeNet-5 network using PyTorch and the Fash
 - Matplotlib
 - Google Colab (Optional: to run the script)
 
-Describe in the readme file how to train each setting, and how to test it with the
-saved weights.
-
 ### Training
 
-We have a model configuration instance that contains different configurations of the LeNet-5 model. Each configuration applies a different regularization technique. The `models_config` dictionary is used to store these models and their respective parameters for training.
+We have a model configuration instance that contains different configurations of the LeNet-5 model. Each configuration applies a different regularization technique. The `models_config` dictionary stores these models and their respective parameters for training.
 
 For example, the following dictionary contains four different configurations of the LeNet-5 model:
 
@@ -30,7 +27,7 @@ models_config = {
 }
 ```
 
-Then, we train each model in the models_config dictionary with different learning rates(0.0001, 0.001, 0.01).
+Then, we train each model in the models_config dictionary with different learning rates(0.01, 0.001, 0.0001).
 
 At the end of the training process, the best model for each regularization technique will be saved in result dictionary along with all the meta info:
 
